@@ -6,18 +6,13 @@ namespace Tp1
 {
     public abstract class CommunicationDecorator : Communication
     {
-        private Communication wrap;
-
-        public CommunicationDecorator()
-        {
-        }
-
-        public void execute(){
         
-        }
+        protected Communication wrap;
 
-        public abstract byte[] ReadData();
+        public CommunicationDecorator(Communication com)
+        {
+            wrap = com;
+        } 
 
-        public abstract void WriteData(byte[] data);
     }
 }
