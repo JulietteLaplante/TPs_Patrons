@@ -15,7 +15,7 @@ namespace Tp1
         public override byte[] ReadData()
         {
             //TODO : faut-il un traitement pour enlever le "Encrypted" au debut du message ?
-            return ((EncryptionDecorator)base.wrap).data;
+            return wrap.ReadData();
         }
 
         public override void WriteData(byte[] data)
@@ -24,7 +24,9 @@ namespace Tp1
             byte[] enc = Encoding.ASCII.GetBytes("ENCRYPTED ");
 
             // data = enc + data
-            ((EncryptionDecorator)base.wrap).data = enc.Concat(((EncryptionDecorator)base.wrap).data).ToArray();
+            byte[] encryptedData = enc.Concat(((EncryptionDecorator)base.wrap).data).ToArray();
+
+            wrap.WriteData(encryptedData);
         }
 
     }
