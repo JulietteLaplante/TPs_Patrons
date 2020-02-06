@@ -11,12 +11,12 @@ namespace Tp1
         //write in the Data buffer
         public abstract void WriteData(byte[] data);
 
-        public abstract byte[] ReadData();
+        public abstract void ReadData();
 
-        //send the communication
-        public void execute()
+        public void Execute()
         {
-            
+            throw new NotImplementedException();
+            //Add to queue ? 
         }
     }
 }

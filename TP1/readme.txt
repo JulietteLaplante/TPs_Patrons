@@ -16,3 +16,5 @@ Dans l'architecture que l'on a suivit, oui. L'instance de notre protocole de com
 + Quel patron va-vous permettre de construire votre instance en permettant  de facilement ajouter des paramètres de construction plus  tard?
 Un builder
 
++ Est-ce que cette instance de classe devrait être un singleton? Pourquoi?
+Non, il peut tout a fait y avoir plsuieurs Communication simultanée. Même vers un même systeme on peut facilement imaginer que differents flux peut etre utilisé dans des contextes differents.

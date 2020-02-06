@@ -4,7 +4,12 @@ using System.Text;
 
 namespace Tp1
 {
-    class ConsoleCommunicationBuilder
+    class ConsoleCommunicationBuilder : CommunicationBuilder
     {
+        public Communication createCommunication()
+        {
+            return new ConsoleCommunication();
+        }
+
     }
 }
