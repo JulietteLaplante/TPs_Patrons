@@ -15,7 +15,7 @@ namespace Tp1
         public override byte[] ReadData()
         {
             //TODO : faut-il un traitement pour enlever le "Compressed" au debut du message ?
-            return ((CompressionDecorator)base.wrap).data;
+            return wrap.ReadData();
         }
 
         public override void WriteData(byte[] data)
@@ -24,7 +24,9 @@ namespace Tp1
             byte[] enc = Encoding.ASCII.GetBytes("COMPRESSED ");
 
             // data = enc + data
-            ((CompressionDecorator)base.wrap).data = enc.Concat(((CompressionDecorator)base.wrap).data).ToArray();
+            byte[] compressedData = enc.Concat(((CompressionDecorator)base.wrap).data).ToArray();
+
+            wrap.WriteData(compressedData);
         }
 
     }
