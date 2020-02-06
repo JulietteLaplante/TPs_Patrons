@@ -6,16 +6,17 @@ namespace Tp1
 {
     public abstract class Communication : Command
     {
-        private byte[] writeData;
-        private byte[] readData;
+        protected byte[] data;
 
-
+        //write in the Data buffer
         public abstract void WriteData(byte[] data);
+
         public abstract byte[] ReadData();
 
+        //send the communication
         public void execute()
         {
-
+            
         }
     }
 }
