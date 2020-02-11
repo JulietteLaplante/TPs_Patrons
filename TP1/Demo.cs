@@ -17,7 +17,7 @@ namespace Tp1
             Console.WriteLine("Demonstration: ");
             communication.SetOnCompleted(() =>
             {
-                Console.WriteLine("Command executed.");
+                Console.WriteLine("Command executed. (Data have been sent)");
                 Console.WriteLine("ReadData: " + communication.ReadData() + "\n");
             });
             communication.WriteData(data);
