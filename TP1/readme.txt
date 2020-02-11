@@ -1,3 +1,7 @@
+﻿Groupe formé de LAPLANTE Juliette, HAFFNER Yoann et CASTANO Nicolas
+
+Le diagramme d'architecture se trouve à la racine du dossier TP1 sous le nom "DIAGRAMME_ARCHI.png".
+
 + Est-ce que le patron Singletons applique à votre système de tâches? 
 Oui, le command executor est en charge de gérer la répartition des tâches sur un nombre de thread fixe. On veut donc une seule instance de ce command executor pour s'assurer que le nombre de threads est respecté. Cette instance doit donc être accessible à chaque fois qu'une commande doit être exécutée. Le Singleton permet donc de répondre à ces besoins.
 
