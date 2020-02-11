@@ -21,8 +21,7 @@ namespace Tp1
 
         public void SetOnCompleted(Action action)
         {
-            // TODO: add method like 
-            evt += action;
+            evt += (object e, EventArgs evt) => action();
         }
 
         public void Completed()
