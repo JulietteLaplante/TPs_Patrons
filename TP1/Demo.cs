@@ -13,6 +13,7 @@ namespace Tp1
             Communication communication = cd.Make();
 
             Console.WriteLine("Demonstration: ");
+            communication.SetOnCompleted(() => Console.WriteLine("Communication thread ended."));
 
             string data = "Hellow World";
             communication.WriteData(data);

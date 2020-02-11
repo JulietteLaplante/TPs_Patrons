@@ -6,6 +6,8 @@ namespace Tp1
 {
     public abstract class Communication : Command
     {
+        private event EventHandler evt;
+
         protected String readData;
         protected String writeData;
 
@@ -16,5 +18,16 @@ namespace Tp1
         public abstract String ReadData();
 
         public abstract void Execute();
+
+        public void SetOnCompleted(Action action)
+        {
+            // TODO: add method like 
+            evt += action;
+        }
+
+        public void Completed()
+        {
+            evt.Invoke(null, EventArgs.Empty);
+        }
     }
 }

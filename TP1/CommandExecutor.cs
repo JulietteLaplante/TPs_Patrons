@@ -55,7 +55,10 @@ namespace Tp1
                         c.Execute();
                     }
                         , TaskCreationOptions.LongRunning)
-                    .ContinueWith((task) => maxThread.Release());
+                    .ContinueWith((task) => {
+                        maxThread.Release();
+                        c.Completed();
+                        });
                 }
             }
         }
