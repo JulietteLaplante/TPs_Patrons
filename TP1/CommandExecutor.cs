@@ -16,7 +16,7 @@ namespace Tp1
 
         private CommandExecutor(int nbThreads)
         {
-            this.maxThread = new SemaphoreSlim(0,nbThreads);
+            this.maxThread = new SemaphoreSlim(nbThreads);
             this.queue = new Queue<Command>();
             Thread thread = new Thread(new ThreadStart(ExecuteCommands));
             thread.Start();
@@ -46,13 +46,17 @@ namespace Tp1
         {
             while (true)
             {
-                maxThread.Wait();
-                Task.Factory.StartNew(() =>
+                if (queue.Count > 0)
                 {
-                    queue.Dequeue().Execute();
+                    maxThread.Wait();
+                    Command c = queue.Dequeue();
+                    Task.Factory.StartNew(() =>
+                    {
+                        c.Execute();
+                    }
+                        , TaskCreationOptions.LongRunning)
+                    .ContinueWith((task) => maxThread.Release());
                 }
-                    , TaskCreationOptions.LongRunning)
-                .ContinueWith((task) => maxThread.Release());
             }
         }
 

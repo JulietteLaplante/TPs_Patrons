@@ -12,21 +12,20 @@ namespace Tp1
         {
         }
 
-        public override void ReadData()
+        public override void Execute()
         {
-            //TODO : faut-il un traitement pour enlever le "Compressed" au debut du message ?
-            wrap.ReadData();
+            wrap.Execute();
         }
 
-        public override void WriteData(byte[] data)
+        public override String ReadData()
         {
-            //string "Compressed" à afficher au debut du message compressé
-            byte[] enc = Encoding.ASCII.GetBytes("COMPRESSED ");
+            //TODO : faut-il un traitement pour enlever le "Compressed" au debut du message ?
+            return wrap.ReadData();
+        }
 
-            // data = enc + data
-            byte[] compressedData = enc.Concat(data).ToArray();
-
-            wrap.WriteData(compressedData);
+        public override void WriteData(String data)
+        {
+            wrap.WriteData("COMPRESSED " + data);
         }
 
     }
