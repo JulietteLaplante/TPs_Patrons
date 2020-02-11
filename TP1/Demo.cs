@@ -17,10 +17,11 @@ namespace Tp1
             string data = "Hellow World";
             communication.WriteData(data);
 
+
             communication.ReadData();
 
             String readData;
-            while ((readData = communication.ReadData()) == "") ;
+            while ((readData = communication.ReadData()) == "");
             {
                 Console.Write("ReadData: " + readData + "\n");
             }

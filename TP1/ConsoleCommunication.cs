@@ -19,11 +19,11 @@ namespace Tp1
             Console.WriteLine("WriteData: " + base.writeData + "\n");
             base.readData = base.writeData;
             base.writeData = "";
+            Console.WriteLine("Command Executed");
         }
 
         public override String ReadData()
         {
-            // Console.Write("ReadData: " + base.readData + "\n");
             String r = base.readData;
             return r;
         }
