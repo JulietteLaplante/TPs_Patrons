@@ -6,19 +6,26 @@ namespace Tp1
 {
     class ConsoleCommunication : Communication
     {
-        public new void Execute()
+
+
+        public override void Execute()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("WriteData: " + base.data);
         }
 
         public override void ReadData()
         {
-            Console.Write(base.data);
+            Console.Write("ReadData: " + base.data);
         }
 
-        public override void WriteData(byte[] data)
+        public override void WriteData(String data)
         {
-            base.data = data;
+            if(base.data != "")
+            {
+                base.data += "\n";
+            }
+            base.data += "Message: " + data;
+            CommandExecutor.GetInstance().AddToQueue(this);
         }
     }
 }

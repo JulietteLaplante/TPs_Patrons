@@ -6,17 +6,13 @@ namespace Tp1
 {
     public abstract class Communication : Command
     {
-        protected byte[] data;
+        protected String data;
 
         //write in the Data buffer
-        public abstract void WriteData(byte[] data);
+        public abstract void WriteData(String data);
 
         public abstract void ReadData();
 
-        public void Execute()
-        {
-            throw new NotImplementedException();
-            //Add to queue ? 
-        }
+        public abstract void Execute();
     }
 }
