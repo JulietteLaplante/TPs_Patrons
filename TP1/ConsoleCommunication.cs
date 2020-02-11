@@ -6,7 +6,6 @@ namespace Tp1
 {
     class ConsoleCommunication : Communication
     {
-
         public ConsoleCommunication()
         {
             base.readData = "";
@@ -26,7 +25,6 @@ namespace Tp1
         {
             // Console.Write("ReadData: " + base.readData + "\n");
             String r = base.readData;
-            base.readData = "";
             return r;
         }
 
