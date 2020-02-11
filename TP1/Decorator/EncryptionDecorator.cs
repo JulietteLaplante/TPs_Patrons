@@ -17,13 +17,13 @@ namespace Tp1
             wrap.Execute();
         }
 
-        public override String ReadData()
+        public override string ReadData()
         {
             //TODO : faut-il un traitement pour enlever le "Encrypted" au debut du message ?
             return wrap.ReadData();
         }
 
-        public override void WriteData(String data)
+        public override void WriteData(string data)
         {
             wrap.WriteData("ENCRYPTED " + data);
         }

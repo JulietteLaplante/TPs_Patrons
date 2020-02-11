@@ -16,10 +16,10 @@ namespace Tp1
 
         public override void Execute()
         {
-            Console.WriteLine("WriteData: " + base.writeData + "\n");
+            System.Threading.Thread.Sleep(500);
+            // Console.WriteLine("WriteData: " + base.writeData + "\n");
             base.readData = base.writeData;
             base.writeData = "";
-            Console.WriteLine("Command Executed");
         }
 
         public override String ReadData()
@@ -30,7 +30,8 @@ namespace Tp1
 
         public override void WriteData(String data)
         {
-            if(!base.writeData.Equals(""))
+            Console.WriteLine("WriteData: " + data + "\n");
+            if (!base.writeData.Equals(""))
             {
                 base.writeData += "\n";
             }
