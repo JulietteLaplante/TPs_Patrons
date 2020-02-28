@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Reflection.Sensors
 {
-    interface Sensor
+    public interface Sensor
     {
         float Sense();
     }

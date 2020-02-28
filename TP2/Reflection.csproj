@@ -52,6 +52,7 @@
     <Compile Include="Enums\TypeEnum.cs" />
     <Compile Include="Enums\UnitEnum.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Sensors\SensorFactory.cs" />
     <Compile Include="SensorManager.cs" />
     <Compile Include="Sensors\Sensor.cs" />
     <Compile Include="Sensors\TemperatureCelsiusSensor.cs" />

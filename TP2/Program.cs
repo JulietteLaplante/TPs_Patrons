@@ -8,10 +8,13 @@ namespace Reflection
 
         static void Main(string[] args)
         {
+            SensorFactory facto = new SensorFactory();
+            
             Console.WriteLine("Creation d'un sensor qui renvoit toujours 10 degres Celsius.");
-            Sensor s1 = new TemperatureCelsiusSensor(); // renvoit 10 degres celsius
+            Sensor s1 = facto.CreateSensor("StandardTemperature"); // sensor qui renvoit toujours 10 degres celsius
+            
             Console.WriteLine("Creation d'un sensor qui renvoit toujours 100 degres Fahrenheit.");
-            Sensor s2 = new TemperatureFahrenheitSensor(); // renvoit 100 degres fahrenheit
+            Sensor s2 = facto.CreateSensor("ExoticTemperature"); // sensor qui renvoit toujours 100 degres fahrenheit
 
             SensorManager sm = new SensorManager();
 

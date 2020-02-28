@@ -9,7 +9,7 @@ using TP2.Conversion;
 using static Reflection.Enums.TypeEnum;
 using static Reflection.Enums.UnitEnum;
 
-namespace Reflection
+namespace Reflection.Sensors
 {
     class SensorManager
     {
