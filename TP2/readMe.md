@@ -1,4 +1,4 @@
-﻿1) Faites une architecture simple permettant de créer des capteurs qui auraient tous la même interface (Sensor). Quels patrons utiliseriez-vous ?
+1) Faites une architecture simple permettant de créer des capteurs qui auraient tous la même interface (Sensor). Quels patrons utiliseriez-vous ?
 Une factory.
 
 3) Faites une architecture simple permettant de construire une représentation en fonction d’une unité et d’un type. Quel patron utiliser ?
