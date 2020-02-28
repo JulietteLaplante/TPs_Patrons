@@ -6,17 +6,27 @@ namespace Tp1
 {
     public abstract class Communication : Command
     {
-        protected byte[] data;
+        private event EventHandler evt;
+
+        protected String readData;
+        protected String writeData;
+
 
         //write in the Data buffer
-        public abstract void WriteData(byte[] data);
+        public abstract void WriteData(String data);
 
-        public abstract byte[] ReadData();
+        public abstract String ReadData();
 
-        //send the communication
-        public void execute()
+        public abstract void Execute();
+
+        public void SetOnCompleted(Action action)
         {
-            
+            evt += (object e, EventArgs evt) => action();
+        }
+
+        public void Completed()
+        {
+            evt.Invoke(null, EventArgs.Empty);
         }
     }
 }

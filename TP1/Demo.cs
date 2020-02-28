@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace Tp1
 {
@@ -6,7 +7,21 @@ namespace Tp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+            ConsoleCommunicationBuilder ccb = new ConsoleCommunicationBuilder();
+            CommunicationDirector cd = new CommunicationDirector(ccb);
+            Communication communication = cd.Make();
+
+            string data = "Hellow World";
+            
+            Console.WriteLine("Demonstration: ");
+            communication.SetOnCompleted(() =>
+            {
+                Console.WriteLine("Command executed. (Data have been sent)");
+                Console.WriteLine("ReadData: " + communication.ReadData() + "\n");
+            });
+            communication.WriteData(data);
+
         }
     }
 }

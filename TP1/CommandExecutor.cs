@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Tp1
 {
@@ -9,20 +10,22 @@ namespace Tp1
     {
         private static CommandExecutor instance;
 
-        private Semaphore maxThread;
-        private List<Command> queue;
+        private SemaphoreSlim maxThread;
+        private Queue<Command> queue;
 
 
         private CommandExecutor(int nbThreads)
         {
-            this.maxThread = new Semaphore(0,nbThreads);
-            this.queue = new List<Command>();
+            this.maxThread = new SemaphoreSlim(nbThreads);
+            this.queue = new Queue<Command>();
+            Thread thread = new Thread(new ThreadStart(ExecuteCommands));
+            thread.Start();
         }
         public static CommandExecutor GetInstance()
         {
             if(instance == null)
             {
-                throw new Exception("Command Executor hasn't been initialized");
+                instance = new CommandExecutor(4);
             }
             return instance;
         }
@@ -36,7 +39,28 @@ namespace Tp1
 
         public void AddToQueue(Command command)
         {
-            queue.Add(command);
+            queue.Enqueue(command);
+        }
+
+        private void ExecuteCommands()
+        {
+            while (true)
+            {
+                if (queue.Count > 0)
+                {
+                    maxThread.Wait();
+                    Command c = queue.Dequeue();
+                    Task.Factory.StartNew(() =>
+                    {
+                        c.Execute();
+                    }
+                        , TaskCreationOptions.LongRunning)
+                    .ContinueWith((task) => {
+                        maxThread.Release();
+                        c.Completed();
+                        });
+                }
+            }
         }
 
         //https://stackoverflow.com/a/14075286

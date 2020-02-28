@@ -12,21 +12,20 @@ namespace Tp1
         {
         }
 
-        public override byte[] ReadData()
+        public override void Execute()
+        {
+            wrap.Execute();
+        }
+
+        public override string ReadData()
         {
             //TODO : faut-il un traitement pour enlever le "Encrypted" au debut du message ?
             return wrap.ReadData();
         }
 
-        public override void WriteData(byte[] data)
+        public override void WriteData(string data)
         {
-            //string "Encrypted" à afficher au debut du message compressé
-            byte[] enc = Encoding.ASCII.GetBytes("ENCRYPTED ");
-
-            // data = enc + data
-            byte[] encryptedData = enc.Concat(((EncryptionDecorator)base.wrap).data).ToArray();
-
-            wrap.WriteData(encryptedData);
+            wrap.WriteData("ENCRYPTED " + data);
         }
 
     }

@@ -6,5 +6,6 @@ namespace Tp1
 {
     interface CommunicationBuilder
     {
+        public Communication createCommunication();
     }
 }
