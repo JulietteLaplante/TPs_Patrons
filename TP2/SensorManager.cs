@@ -58,16 +58,21 @@ namespace Reflection
 
             // Instantiation du Datavisualizer correspondant
             Assembly currentAssembly = Assembly.GetExecutingAssembly();
+            // On parcours toutes les class de l'assembly courant ...
             foreach(Type t in currentAssembly.GetTypes())
             {
                 MemberInfo typeInfo = t;
                 attributes = typeInfo.GetCustomAttributes(false);
+                // ... pour trouver leurs attributs custom non hérités ...
                 foreach(object o in attributes)
                 {
+                    // ... et si cette classe possede l'attribut "MyCustomDataVisualizerAttribute" ... 
                     if (o is MyCustomDataVisualizerAttribute)
                     {
+                        // ... et que cet attribut a un type (Temperature /pression etc) correspondant a celui du Sensor ... 
                         if (sensorType == ((MyCustomDataVisualizerAttribute)o).type)
                         {
+                            // ... alors on a trouvé un DataVisualizer qui correspond !
                             Console.WriteLine("On a trouvé un DataVisualizer qui correspond a notre Sensor !");
                             Type[] constructorTypes = new Type[1];
                             object[] constructorParameters = new object[1];
@@ -76,7 +81,7 @@ namespace Reflection
                             constructorParameters[0] = sensorUnit;
 
                             // On appel le constructeur du DataVisualizer que l'on a trouvé
-                            // On donne le type d'argument que prend le constructeur pour trouver le bon constructeur s'il y en a plusieurs
+                            // On donne les type d'argument que prend le constructeur pour trouver le bon constructeur s'il y en a plusieurs
                             object dv = t.GetConstructor(constructorTypes).Invoke(constructorParameters);
                             visualizers.Add((DataVisualizer)dv);
                         }
@@ -90,6 +95,14 @@ namespace Reflection
 
 
 
+        }
+
+        public void Sense()
+        {
+            for( int i = 0; i < sensors.Count; ++i)
+            {
+                visualizers[i].Display(sensors[i].Sense());
+            }
         }
     }
 }

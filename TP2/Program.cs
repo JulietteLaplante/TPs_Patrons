@@ -14,6 +14,10 @@ namespace Reflection
             SensorManager sm = new SensorManager();
 
             sm.AddSensor(s1);
+            sm.AddSensor(s2);
+
+            sm.Sense();
+
         }
     }
 }
