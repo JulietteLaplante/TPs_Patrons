@@ -1,12 +1,5 @@
-TP1/.vs/
+*/.vs/
 
-TP1/bin/
+*/bin/
 
-TP1/obj/
-
-TP2/.vs/
-
-TP2/bin/
-
-TP2/obj/
-
+*/obj/
