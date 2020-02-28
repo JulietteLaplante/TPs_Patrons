@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using static Reflection.TypeEnum;
+using static Reflection.Enums.TypeEnum;
 
 namespace Reflection.Attributes
 {
-    public class MyCustomDataVisualizerAttribute
+    public class MyCustomDataVisualizerAttribute : Attribute
     {
         public DataType type;
         public MyCustomDataVisualizerAttribute(DataType t)

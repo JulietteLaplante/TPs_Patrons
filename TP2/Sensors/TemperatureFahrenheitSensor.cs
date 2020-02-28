@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Reflection.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using static Reflection.TypeEnum;
-using static Reflection.UnitEnum;
+using static Reflection.Enums.TypeEnum;
+using static Reflection.Enums.UnitEnum;
 
-namespace Reflection
+namespace Reflection.Sensors
 {
    [MyCustomSensorAttribute(DataType.TEMP, Unit.FAHRENHEIT)]
     class TemperatureFahrenheitSensor : Sensor

@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using static Reflection.UnitEnum;
+using Reflection.Attributes;
+using static Reflection.Enums.UnitEnum;
+using static Reflection.Enums.TypeEnum;
 
-namespace Reflection
+namespace Reflection.DataVisualization
 {
-
+    [MyCustomDataVisualizerAttribute(DataType.TEMP)]
     public class TemperatureVisualizer : DataVisualizer
     {
         Unit unit;

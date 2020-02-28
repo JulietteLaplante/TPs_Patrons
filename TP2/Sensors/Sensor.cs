@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Reflection
+namespace Reflection.Sensors
 {
     interface Sensor
     {
