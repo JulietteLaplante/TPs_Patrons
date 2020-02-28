@@ -65,7 +65,7 @@
     <None Include=".vs\VSWorkspaceState.json" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="readMe.md" />
+    <None Include="readme.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>

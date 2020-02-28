@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP2_Reflection", "TP2_Reflection.csproj", "{AF88BCF2-A90C-43FF-8193-B832F7BE6BC5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF88BCF2-A90C-43FF-8193-B832F7BE6BC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF88BCF2-A90C-43FF-8193-B832F7BE6BC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF88BCF2-A90C-43FF-8193-B832F7BE6BC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF88BCF2-A90C-43FF-8193-B832F7BE6BC5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B3A5431-B698-4F1F-BFF3-8ABE599804CD}
+	EndGlobalSection
+EndGlobal
