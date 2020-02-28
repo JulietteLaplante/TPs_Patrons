@@ -63,6 +63,9 @@
     <None Include=".vs\TP2\v16\.suo" />
     <None Include=".vs\VSWorkspaceState.json" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="readMe.md" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>
     <VisualStudio AllowExistingFolder="true" />

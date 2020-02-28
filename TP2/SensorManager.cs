@@ -26,17 +26,18 @@ namespace Reflection
         }
         public void RemoveSensor(Sensor sensorToRemove)
         {
-            if (sensors.Remove(sensorToRemove))
+            int i = 0;
+            // s'arrete si :
+            //      - on a parcouru tout les elements
+            //      - on a trouvé le sensor a Remove
+            //      - on a trouvé un convertisseur dont le sensor encapsulé est celui a Remove
+            for (i = 0; i < sensors.Count && sensors[i] != sensorToRemove && !(sensors[i] is Convertor && sensorToRemove == ((Convertor)sensors[i]).GetSensor()); ++i) ;
+            // Si la condition d'arret n'est pas que l'on a parcouru tout les elements
+            // Alors on a trouvé le sensor a remove
+            if (i != sensors.Count)
             {
-                return;
-            }
-            foreach(Sensor sensor in sensors)
-            {
-                if (sensor is Convertor && sensorToRemove == ((Convertor)sensor).GetSensor())
-                {
-                    sensors.Remove(sensor);
-                    return;
-                }
+                sensors.Remove(sensors[i]);
+                visualizers.Remove(visualizers[i]);
             }
         }
         public void AddSensor(Sensor s, bool useConvertors=true)
