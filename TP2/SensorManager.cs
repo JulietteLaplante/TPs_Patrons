@@ -5,6 +5,7 @@ using System.Text;
 using Reflection.Attributes;
 using Reflection.DataVisualization;
 using Reflection.Sensors;
+using TP2.Conversion;
 using static Reflection.Enums.TypeEnum;
 using static Reflection.Enums.UnitEnum;
 
@@ -14,34 +15,47 @@ namespace Reflection
     {
         IList<Sensor> sensors;
         IList<DataVisualizer> visualizers;
+        IDictionary<Unit, Type> convertors;
 
         public SensorManager()
         {
             this.sensors = new List<Sensor>();
             this.visualizers = new List<DataVisualizer>();
+            this.convertors = new Dictionary<Unit, Type>();
+            this.ConvertorCreation();
         }
-
-        public void AddSensor(Sensor s)
+        public void RemoveSensor(Sensor sensorToRemove)
+        {
+            if (sensors.Remove(sensorToRemove))
+            {
+                return;
+            }
+            foreach(Sensor sensor in sensors)
+            {
+                if (sensor is Convertor && sensorToRemove == ((Convertor)sensor).GetSensor())
+                {
+                    sensors.Remove(sensor);
+                    return;
+                }
+            }
+        }
+        public void AddSensor(Sensor s, bool useConvertors=true)
         {
             Unit sensorUnit = Unit.BAR; // Arbitrary default value, won't be used
-            DataType sensorType= DataType.TEMP; //  same
+            DataType sensorType = DataType.TEMP; //  same
             Boolean error = true;
-            sensors.Add(s);
-            
-            // Récuperation du type et de l'unité du sensor (temperature/celius ou temperature/Fanrenheint ou pression/bar etc.)
+
+            // Récuperation du type et de l'unité du sensor (temperature/celius ou temperature/Fanrenheit ou pression/bar etc.)
             MemberInfo info = s.GetType();
             object[] attributes = info.GetCustomAttributes(false);
-            foreach(object o in attributes)
+            foreach (object o in attributes)
             {
-                if(o is MyCustomSensorAttribute)
+                if (o is MyCustomSensorAttribute)
                 {
                     sensorUnit = ((MyCustomSensorAttribute)o).unit;
                     sensorType = ((MyCustomSensorAttribute)o).type;
-                    error = false;   
+                    error = false;
                     break;
-                } else
-                {
-                    Console.WriteLine("attribute is of type :" + o.ToString());
                 }
             }
 
@@ -50,21 +64,17 @@ namespace Reflection
             {
                 Console.WriteLine("La récuperation du type et de l'unité du sensor a échouée");
                 return;
-            } else
-            {
-                Console.WriteLine("On a récupéré le type et l'unit du sensor");
             }
 
-
-            // Instantiation du Datavisualizer correspondant
+            // Etape : Instantiation du Datavisualizer correspondant
             Assembly currentAssembly = Assembly.GetExecutingAssembly();
             // On parcours toutes les class de l'assembly courant ...
-            foreach(Type t in currentAssembly.GetTypes())
+            foreach (Type t in currentAssembly.GetTypes())
             {
                 MemberInfo typeInfo = t;
                 attributes = typeInfo.GetCustomAttributes(false);
                 // ... pour trouver leurs attributs custom non hérités ...
-                foreach(object o in attributes)
+                foreach (object o in attributes)
                 {
                     // ... et si cette classe possede l'attribut "MyCustomDataVisualizerAttribute" ... 
                     if (o is MyCustomDataVisualizerAttribute)
@@ -73,35 +83,85 @@ namespace Reflection
                         if (sensorType == ((MyCustomDataVisualizerAttribute)o).type)
                         {
                             // ... alors on a trouvé un DataVisualizer qui correspond !
-                            Console.WriteLine("On a trouvé un DataVisualizer qui correspond a notre Sensor !");
-                            Type[] constructorTypes = new Type[1];
-                            object[] constructorParameters = new object[1];
+                            
+                            // Maintenant, est ce que l'unité utilisée par notre sensor possède un convertisseur correspondant ?
+                            if( useConvertors && convertors.ContainsKey(sensorUnit))
+                            {
+                                // Si oui, il faut ajouter a la liste des sensors le convertisseur qui encapsule notre sensor
 
-                            constructorTypes[0] = sensorUnit.GetType();
-                            constructorParameters[0] = sensorUnit;
+                                // on instantie le converteur
+                                Type[] convertorConstructorTypes = new Type[1];
+                                object[] convertorConstructorParameters = new object[1];
+
+                                convertorConstructorTypes[0] = s.GetType();
+                                convertorConstructorParameters[0] = s;
+
+                                object c = convertors[sensorUnit].GetConstructor(convertorConstructorTypes).Invoke(convertorConstructorParameters);
+                                sensors.Add((Sensor)c);
+
+                                // L'unité du sensor est maintenant encapsulé dans le convertisseur
+                                // On met donc a jour la variable sensorUnit pour que le datavisualizer soit crée avec la nouvelle unité (celle en sortie du convertisseur)
+
+                                foreach(object attribute in convertors[sensorUnit].GetCustomAttributes(false))
+                                {  
+                                    if( attribute is MyCustomConvertorAttribute)
+                                    {
+                                        sensorUnit = ((MyCustomConvertorAttribute)attribute).output;
+                                    }
+
+                                }
+
+                            } else
+                            {
+                                // Sinon on ajoute le sensor donné en paramètre sans l'encapsuler
+                                sensors.Add(s);
+                               
+                            }
+
+                            // Puis on instantie le DataVisualizer
+                            Type[] dvConstructorTypes = new Type[1];
+                            object[] dvConstructorParameters = new object[1];
+
+                            dvConstructorTypes[0] = sensorUnit.GetType();
+                            dvConstructorParameters[0] = sensorUnit;
 
                             // On appel le constructeur du DataVisualizer que l'on a trouvé
                             // On donne les type d'argument que prend le constructeur pour trouver le bon constructeur s'il y en a plusieurs
-                            object dv = t.GetConstructor(constructorTypes).Invoke(constructorParameters);
+                            object dv = t.GetConstructor(dvConstructorTypes).Invoke(dvConstructorParameters);
                             visualizers.Add((DataVisualizer)dv);
                         }
                     }
                 }
             }
-
-
-
-
-
-
-
         }
 
         public void Sense()
         {
-            for( int i = 0; i < sensors.Count; ++i)
+            for (int i = 0; i < sensors.Count; ++i)
             {
                 visualizers[i].Display(sensors[i].Sense());
+            }
+        }
+
+        private void ConvertorCreation()
+        {
+            Assembly currentAssembly = Assembly.GetExecutingAssembly();
+            // On parcours toutes les class de l'assembly courant ...
+            foreach (Type t in currentAssembly.GetTypes())
+            {
+                MemberInfo typeInfo = t;
+                object[] attributes = typeInfo.GetCustomAttributes(false);
+                // ... pour trouver leurs attributs custom non hérités ...
+                foreach (object o in attributes)
+                {
+                    // ... et si cette classe possede l'attribut "MyCustomConvertorAttribute" ... 
+                    if (o is MyCustomConvertorAttribute)
+                    {
+                        // On ajoute au dictionnaire le type du converteur que l'on a trouver
+                        convertors.Add(((MyCustomConvertorAttribute)o).input, t);
+                    }
+
+                }
             }
         }
     }

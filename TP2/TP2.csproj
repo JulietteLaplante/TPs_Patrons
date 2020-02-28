@@ -42,9 +42,11 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attributes\MyCustomConversionAttribute.cs" />
+    <Compile Include="Attributes\MyCustomConvertorAttribute.cs" />
     <Compile Include="Attributes\MyCustomDataVisualizerAttribute.cs" />
     <Compile Include="Attributes\MyCustomSensorAttribute.cs" />
+    <Compile Include="Conversion\Convertor.cs" />
+    <Compile Include="Conversion\FahrenheitToCelsiusConvertor.cs" />
     <Compile Include="DataVisualization\DataVisualizer.cs" />
     <Compile Include="DataVisualization\TemperatureVisualizer.cs" />
     <Compile Include="Enums\TypeEnum.cs" />
