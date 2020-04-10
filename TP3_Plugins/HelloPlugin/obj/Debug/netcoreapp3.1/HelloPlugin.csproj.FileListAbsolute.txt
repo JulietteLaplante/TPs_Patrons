@@ -1,0 +1,8 @@
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\HelloPlugin\bin\Debug\netcoreapp3.1\HelloPlugin.deps.json
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\HelloPlugin\bin\Debug\netcoreapp3.1\HelloPlugin.dll
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\HelloPlugin\bin\Debug\netcoreapp3.1\HelloPlugin.pdb
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\HelloPlugin\obj\Debug\netcoreapp3.1\HelloPlugin.csproj.CoreCompileInputs.cache
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\HelloPlugin\obj\Debug\netcoreapp3.1\HelloPlugin.AssemblyInfoInputs.cache
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\HelloPlugin\obj\Debug\netcoreapp3.1\HelloPlugin.AssemblyInfo.cs
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\HelloPlugin\obj\Debug\netcoreapp3.1\HelloPlugin.dll
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\HelloPlugin\obj\Debug\netcoreapp3.1\HelloPlugin.pdb

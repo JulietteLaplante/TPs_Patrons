@@ -1,0 +1,16 @@
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\bin\Release\netcoreapp3.1\UserLoaderApp.exe
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\bin\Release\netcoreapp3.1\UserLoaderApp.deps.json
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\bin\Release\netcoreapp3.1\UserLoaderApp.runtimeconfig.json
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\bin\Release\netcoreapp3.1\UserLoaderApp.runtimeconfig.dev.json
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\bin\Release\netcoreapp3.1\UserLoaderApp.dll
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\bin\Release\netcoreapp3.1\UserLoaderApp.pdb
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\bin\Release\netcoreapp3.1\BasePlugin.dll
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\bin\Release\netcoreapp3.1\BasePlugin.pdb
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\obj\Release\netcoreapp3.1\UserLoaderApp.csprojAssemblyReference.cache
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\obj\Release\netcoreapp3.1\UserLoaderApp.csproj.CoreCompileInputs.cache
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\obj\Release\netcoreapp3.1\UserLoaderApp.AssemblyInfoInputs.cache
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\obj\Release\netcoreapp3.1\UserLoaderApp.AssemblyInfo.cs
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\obj\Release\netcoreapp3.1\UserLoaderApp.csproj.CopyComplete
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\obj\Release\netcoreapp3.1\UserLoaderApp.dll
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\obj\Release\netcoreapp3.1\UserLoaderApp.pdb
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\obj\Release\netcoreapp3.1\UserLoaderApp.genruntimeconfig.cache

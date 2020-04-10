@@ -1,0 +1,9 @@
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\BasePlugin\bin\Release\netcoreapp3.1\BasePlugin.deps.json
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\BasePlugin\bin\Release\netcoreapp3.1\BasePlugin.dll
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\BasePlugin\bin\Release\netcoreapp3.1\BasePlugin.pdb
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\BasePlugin\obj\Release\netcoreapp3.1\BasePlugin.csprojAssemblyReference.cache
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\BasePlugin\obj\Release\netcoreapp3.1\BasePlugin.csproj.CoreCompileInputs.cache
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\BasePlugin\obj\Release\netcoreapp3.1\BasePlugin.AssemblyInfoInputs.cache
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\BasePlugin\obj\Release\netcoreapp3.1\BasePlugin.AssemblyInfo.cs
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\BasePlugin\obj\Release\netcoreapp3.1\BasePlugin.dll
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\BasePlugin\obj\Release\netcoreapp3.1\BasePlugin.pdb
