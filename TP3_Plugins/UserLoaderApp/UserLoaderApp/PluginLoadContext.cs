@@ -4,6 +4,9 @@ using System.Runtime.Loader;
 
 namespace UserLoaderApp
 {
+    /// <summary>
+    /// Code from Microsoft about Plugin Loading
+    /// </summary>
     class PluginLoadContext : AssemblyLoadContext
     {
         private AssemblyDependencyResolver _resolver;

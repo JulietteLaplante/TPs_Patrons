@@ -4,14 +4,14 @@
     "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\UserLoaderApp\\UserLoaderApp\\UserLoaderApp.csproj": {}
   },
   "projects": {
-    "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\BasePlugin\\BasePlugin.csproj": {
+    "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\BaseUserLoaderPlugin\\BaseUserLoaderPlugin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\BasePlugin\\BasePlugin.csproj",
-        "projectName": "BasePlugin",
-        "projectPath": "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\BasePlugin\\BasePlugin.csproj",
+        "projectUniqueName": "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\BaseUserLoaderPlugin\\BaseUserLoaderPlugin.csproj",
+        "projectName": "BaseUserLoaderPlugin",
+        "projectPath": "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\BaseUserLoaderPlugin\\BaseUserLoaderPlugin.csproj",
         "packagesPath": "C:\\Users\\yoyo6\\.nuget\\packages\\",
-        "outputPath": "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\BasePlugin\\obj\\",
+        "outputPath": "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\BaseUserLoaderPlugin\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -85,8 +85,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\BasePlugin\\BasePlugin.csproj": {
-                "projectPath": "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\BasePlugin\\BasePlugin.csproj"
+              "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\BaseUserLoaderPlugin\\BaseUserLoaderPlugin.csproj": {
+                "projectPath": "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\BaseUserLoaderPlugin\\BaseUserLoaderPlugin.csproj"
               }
             }
           }

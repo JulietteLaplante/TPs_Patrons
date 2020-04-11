@@ -4,8 +4,8 @@ D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\bin\
 D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\bin\Debug\netcoreapp3.1\UserLoaderApp.runtimeconfig.dev.json
 D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\bin\Debug\netcoreapp3.1\UserLoaderApp.dll
 D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\bin\Debug\netcoreapp3.1\UserLoaderApp.pdb
-D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\bin\Debug\netcoreapp3.1\BasePlugin.dll
-D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\bin\Debug\netcoreapp3.1\BasePlugin.pdb
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\bin\Debug\netcoreapp3.1\BaseUserLoaderPlugin.dll
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\bin\Debug\netcoreapp3.1\BaseUserLoaderPlugin.pdb
 D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\obj\Debug\netcoreapp3.1\UserLoaderApp.csprojAssemblyReference.cache
 D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\obj\Debug\netcoreapp3.1\UserLoaderApp.csproj.CoreCompileInputs.cache
 D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\UserLoaderApp\UserLoaderApp\obj\Debug\netcoreapp3.1\UserLoaderApp.AssemblyInfoInputs.cache

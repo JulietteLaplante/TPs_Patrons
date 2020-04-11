@@ -2,28 +2,28 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "BasePlugin/1.0.0": {
+      "BaseUserLoaderPlugin/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "compile": {
-          "bin/placeholder/BasePlugin.dll": {}
+          "bin/placeholder/BaseUserLoaderPlugin.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BasePlugin.dll": {}
+          "bin/placeholder/BaseUserLoaderPlugin.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "BasePlugin/1.0.0": {
+    "BaseUserLoaderPlugin/1.0.0": {
       "type": "project",
-      "path": "../../BasePlugin/BasePlugin.csproj",
-      "msbuildProject": "../../BasePlugin/BasePlugin.csproj"
+      "path": "../../BaseUserLoaderPlugin/BaseUserLoaderPlugin.csproj",
+      "msbuildProject": "../../BaseUserLoaderPlugin/BaseUserLoaderPlugin.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "BasePlugin >= 1.0.0"
+      "BaseUserLoaderPlugin >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -56,8 +56,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\BasePlugin\\BasePlugin.csproj": {
-              "projectPath": "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\BasePlugin\\BasePlugin.csproj"
+            "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\BaseUserLoaderPlugin\\BaseUserLoaderPlugin.csproj": {
+              "projectPath": "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\BaseUserLoaderPlugin\\BaseUserLoaderPlugin.csproj"
             }
           }
         }

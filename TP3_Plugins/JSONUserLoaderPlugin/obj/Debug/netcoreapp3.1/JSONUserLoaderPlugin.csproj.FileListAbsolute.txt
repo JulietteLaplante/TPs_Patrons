@@ -1,0 +1,9 @@
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\JSONUserLoaderPlugin\bin\Debug\netcoreapp3.1\JSONUserLoaderPlugin.deps.json
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\JSONUserLoaderPlugin\bin\Debug\netcoreapp3.1\JSONUserLoaderPlugin.dll
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\JSONUserLoaderPlugin\bin\Debug\netcoreapp3.1\JSONUserLoaderPlugin.pdb
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\JSONUserLoaderPlugin\obj\Debug\netcoreapp3.1\JSONUserLoaderPlugin.csprojAssemblyReference.cache
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\JSONUserLoaderPlugin\obj\Debug\netcoreapp3.1\JSONUserLoaderPlugin.csproj.CoreCompileInputs.cache
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\JSONUserLoaderPlugin\obj\Debug\netcoreapp3.1\JSONUserLoaderPlugin.AssemblyInfoInputs.cache
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\JSONUserLoaderPlugin\obj\Debug\netcoreapp3.1\JSONUserLoaderPlugin.AssemblyInfo.cs
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\JSONUserLoaderPlugin\obj\Debug\netcoreapp3.1\JSONUserLoaderPlugin.dll
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\JSONUserLoaderPlugin\obj\Debug\netcoreapp3.1\JSONUserLoaderPlugin.pdb

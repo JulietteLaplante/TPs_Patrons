@@ -1,0 +1,8 @@
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\BaseUserLoaderPlugin\bin\Debug\netcoreapp3.1\BaseUserLoaderPlugin.deps.json
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\BaseUserLoaderPlugin\bin\Debug\netcoreapp3.1\BaseUserLoaderPlugin.dll
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\BaseUserLoaderPlugin\bin\Debug\netcoreapp3.1\BaseUserLoaderPlugin.pdb
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\BaseUserLoaderPlugin\obj\Debug\netcoreapp3.1\BaseUserLoaderPlugin.csproj.CoreCompileInputs.cache
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\BaseUserLoaderPlugin\obj\Debug\netcoreapp3.1\BaseUserLoaderPlugin.AssemblyInfoInputs.cache
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\BaseUserLoaderPlugin\obj\Debug\netcoreapp3.1\BaseUserLoaderPlugin.AssemblyInfo.cs
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\BaseUserLoaderPlugin\obj\Debug\netcoreapp3.1\BaseUserLoaderPlugin.dll
+D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\BaseUserLoaderPlugin\obj\Debug\netcoreapp3.1\BaseUserLoaderPlugin.pdb

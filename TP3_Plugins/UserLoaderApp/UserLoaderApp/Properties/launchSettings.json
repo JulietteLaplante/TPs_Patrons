@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "UserLoaderApp": {
+      "commandName": "Project",
+      "commandLineArgs": "json-loader"
+    }
+  }
+}

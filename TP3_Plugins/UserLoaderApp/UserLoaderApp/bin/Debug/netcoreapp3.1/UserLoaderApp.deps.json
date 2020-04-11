@@ -8,15 +8,15 @@
     ".NETCoreApp,Version=v3.1": {
       "UserLoaderApp/1.0.0": {
         "dependencies": {
-          "BasePlugin": "1.0.0"
+          "BaseUserLoaderPlugin": "1.0.0"
         },
         "runtime": {
           "UserLoaderApp.dll": {}
         }
       },
-      "BasePlugin/1.0.0": {
+      "BaseUserLoaderPlugin/1.0.0": {
         "runtime": {
-          "BasePlugin.dll": {}
+          "BaseUserLoaderPlugin.dll": {}
         }
       }
     }
@@ -27,7 +27,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "BasePlugin/1.0.0": {
+    "BaseUserLoaderPlugin/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
