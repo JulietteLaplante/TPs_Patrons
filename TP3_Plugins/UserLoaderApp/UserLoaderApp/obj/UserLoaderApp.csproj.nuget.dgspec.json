@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\UserLoaderApp\\UserLoaderApp\\UserLoaderApp.csproj": {}
+    "D:\\sources\\TPs_Patrons\\TP3_Plugins\\UserLoaderApp\\UserLoaderApp\\UserLoaderApp.csproj": {}
   },
   "projects": {
-    "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\BaseUserLoaderPlugin\\BaseUserLoaderPlugin.csproj": {
+    "D:\\sources\\TPs_Patrons\\TP3_Plugins\\BaseUserLoaderPlugin\\BaseUserLoaderPlugin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\BaseUserLoaderPlugin\\BaseUserLoaderPlugin.csproj",
+        "projectUniqueName": "D:\\sources\\TPs_Patrons\\TP3_Plugins\\BaseUserLoaderPlugin\\BaseUserLoaderPlugin.csproj",
         "projectName": "BaseUserLoaderPlugin",
-        "projectPath": "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\BaseUserLoaderPlugin\\BaseUserLoaderPlugin.csproj",
-        "packagesPath": "C:\\Users\\yoyo6\\.nuget\\packages\\",
-        "outputPath": "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\BaseUserLoaderPlugin\\obj\\",
+        "projectPath": "D:\\sources\\TPs_Patrons\\TP3_Plugins\\BaseUserLoaderPlugin\\BaseUserLoaderPlugin.csproj",
+        "packagesPath": "C:\\Users\\nicol\\.nuget\\packages\\",
+        "outputPath": "D:\\sources\\TPs_Patrons\\TP3_Plugins\\BaseUserLoaderPlugin\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\yoyo6\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nicol\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -59,20 +56,17 @@
         }
       }
     },
-    "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\UserLoaderApp\\UserLoaderApp\\UserLoaderApp.csproj": {
+    "D:\\sources\\TPs_Patrons\\TP3_Plugins\\UserLoaderApp\\UserLoaderApp\\UserLoaderApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\UserLoaderApp\\UserLoaderApp\\UserLoaderApp.csproj",
+        "projectUniqueName": "D:\\sources\\TPs_Patrons\\TP3_Plugins\\UserLoaderApp\\UserLoaderApp\\UserLoaderApp.csproj",
         "projectName": "UserLoaderApp",
-        "projectPath": "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\UserLoaderApp\\UserLoaderApp\\UserLoaderApp.csproj",
-        "packagesPath": "C:\\Users\\yoyo6\\.nuget\\packages\\",
-        "outputPath": "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\UserLoaderApp\\UserLoaderApp\\obj\\",
+        "projectPath": "D:\\sources\\TPs_Patrons\\TP3_Plugins\\UserLoaderApp\\UserLoaderApp\\UserLoaderApp.csproj",
+        "packagesPath": "C:\\Users\\nicol\\.nuget\\packages\\",
+        "outputPath": "D:\\sources\\TPs_Patrons\\TP3_Plugins\\UserLoaderApp\\UserLoaderApp\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\yoyo6\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nicol\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -85,8 +79,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\BaseUserLoaderPlugin\\BaseUserLoaderPlugin.csproj": {
-                "projectPath": "D:\\yoyo6\\Documents\\GitHub\\TPPatrons\\TP3_Plugins\\BaseUserLoaderPlugin\\BaseUserLoaderPlugin.csproj"
+              "D:\\sources\\TPs_Patrons\\TP3_Plugins\\BaseUserLoaderPlugin\\BaseUserLoaderPlugin.csproj": {
+                "projectPath": "D:\\sources\\TPs_Patrons\\TP3_Plugins\\BaseUserLoaderPlugin\\BaseUserLoaderPlugin.csproj"
               }
             }
           }

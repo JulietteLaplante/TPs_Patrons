@@ -25,12 +25,15 @@ namespace UserLoaderApp
                     Console.ReadLine();
                 }
 
+
                 // Load commands from plugins.
-                string[] pluginPaths = //Directory.GetFiles("plugins", "*.dll");
-                    { @"..\JSONUserLoaderPlugin\bin\Debug\netcoreapp3.1\JSONUserLoaderPlugin.dll"};
+                string[] pluginPaths = Directory.GetFiles("plugins", "*.dll");
+                    // { @"..\JSONUserLoaderPlugin\bin\Debug\netcoreapp3.1\JSONUserLoaderPlugin.dll"};
+
 
                 IEnumerable<IUserLoader> userLoaders = pluginPaths.SelectMany(pluginPath =>
                 {
+                    Console.WriteLine("load plugin :" + pluginPath);
                     Assembly pluginAssembly = LoadPlugin(pluginPath);
                     return CreateLoader(pluginAssembly);
                 }).ToList();
@@ -79,6 +82,9 @@ namespace UserLoaderApp
             {
                 Console.WriteLine(ex);
             }
+
+            Console.WriteLine("Press any key to close this window . . . ");
+            ConsoleKeyInfo cki = Console.ReadKey();
         }
 
 
@@ -90,12 +96,13 @@ namespace UserLoaderApp
         static Assembly LoadPlugin(string relativePath)
         {
             // Navigate up to the solution root
-            string root = Path.GetFullPath(Path.Combine(
+            /*string root = Path.GetFullPath(Path.Combine(
                 Path.GetDirectoryName(
                     Path.GetDirectoryName(
                         Path.GetDirectoryName(
                             Path.GetDirectoryName(
-                                Path.GetDirectoryName(typeof(Program).Assembly.Location)))))));
+                                Path.GetDirectoryName(typeof(Program).Assembly.Location)))))));*/
+            string root = Directory.GetCurrentDirectory();
 
             string pluginLocation = Path.GetFullPath(Path.Combine(root, relativePath.Replace('\\', Path.DirectorySeparatorChar)));
             Console.WriteLine($"Loading userLoaders from: {pluginLocation}");
@@ -132,6 +139,7 @@ namespace UserLoaderApp
                     $"Can't find any type which implements IUserLoader in {assembly} from {assembly.Location}.\n" +
                     $"Available types: {availableTypes}");
             }
+
         }
     }
 }

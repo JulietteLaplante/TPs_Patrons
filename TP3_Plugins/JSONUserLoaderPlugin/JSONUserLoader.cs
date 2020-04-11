@@ -19,6 +19,7 @@ namespace JSONUserLoaderPlugin
             // Find files
             string[] files = Directory.GetFiles("users", "*.json");
 
+
             // Create users
             foreach (string file in files)
             {

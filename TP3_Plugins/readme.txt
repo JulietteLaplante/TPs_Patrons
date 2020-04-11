@@ -17,3 +17,4 @@ La classe User se trouve dans la base de plugin.
 
 + En vous basant sur la documentation, à quoi ressemble l’interface d’un plugin dans notre système? (N’oubliez pas il doit pouvoir charger une liste d’utilisateurs)
 
+Dans ce système l'interface d'un plugin est composé de deux strings : le nom et la description du plugin, ainsi que d'une methode "LoadUsers" permettant de recupérer une liste de "User".

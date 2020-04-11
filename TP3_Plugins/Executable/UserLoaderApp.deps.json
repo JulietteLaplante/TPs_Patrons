@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "UserLoaderApp/1.0.0": {
+        "dependencies": {
+          "BaseUserLoaderPlugin": "1.0.0"
+        },
+        "runtime": {
+          "UserLoaderApp.dll": {}
+        }
+      },
+      "BaseUserLoaderPlugin/1.0.0": {
+        "runtime": {
+          "BaseUserLoaderPlugin.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "UserLoaderApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BaseUserLoaderPlugin/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

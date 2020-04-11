@@ -1,0 +1,26 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "JSONUserLoaderPlugin/1.0.0": {
+        "dependencies": {
+          "BaseUserLoaderPlugin": "1.0.0"
+        },
+        "runtime": {
+          "JSONUserLoaderPlugin.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "JSONUserLoaderPlugin/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

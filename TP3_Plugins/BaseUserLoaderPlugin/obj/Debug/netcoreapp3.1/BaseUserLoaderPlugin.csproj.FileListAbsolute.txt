@@ -6,3 +6,11 @@ D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\BaseUserLoaderPlugin\obj\Debug\n
 D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\BaseUserLoaderPlugin\obj\Debug\netcoreapp3.1\BaseUserLoaderPlugin.AssemblyInfo.cs
 D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\BaseUserLoaderPlugin\obj\Debug\netcoreapp3.1\BaseUserLoaderPlugin.dll
 D:\yoyo6\Documents\GitHub\TPPatrons\TP3_Plugins\BaseUserLoaderPlugin\obj\Debug\netcoreapp3.1\BaseUserLoaderPlugin.pdb
+D:\sources\TPs_Patrons\TP3_Plugins\BaseUserLoaderPlugin\bin\Debug\netcoreapp3.1\BaseUserLoaderPlugin.deps.json
+D:\sources\TPs_Patrons\TP3_Plugins\BaseUserLoaderPlugin\bin\Debug\netcoreapp3.1\BaseUserLoaderPlugin.dll
+D:\sources\TPs_Patrons\TP3_Plugins\BaseUserLoaderPlugin\bin\Debug\netcoreapp3.1\BaseUserLoaderPlugin.pdb
+D:\sources\TPs_Patrons\TP3_Plugins\BaseUserLoaderPlugin\obj\Debug\netcoreapp3.1\BaseUserLoaderPlugin.AssemblyInfoInputs.cache
+D:\sources\TPs_Patrons\TP3_Plugins\BaseUserLoaderPlugin\obj\Debug\netcoreapp3.1\BaseUserLoaderPlugin.AssemblyInfo.cs
+D:\sources\TPs_Patrons\TP3_Plugins\BaseUserLoaderPlugin\obj\Debug\netcoreapp3.1\BaseUserLoaderPlugin.dll
+D:\sources\TPs_Patrons\TP3_Plugins\BaseUserLoaderPlugin\obj\Debug\netcoreapp3.1\BaseUserLoaderPlugin.pdb
+D:\sources\TPs_Patrons\TP3_Plugins\BaseUserLoaderPlugin\obj\Debug\netcoreapp3.1\BaseUserLoaderPlugin.csprojAssemblyReference.cache
