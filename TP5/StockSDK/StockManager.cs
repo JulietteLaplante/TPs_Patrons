@@ -8,7 +8,7 @@ using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using RPCSDK;
 
-namespace StockManager
+namespace StockSDK
 {
     class StockManager
     {

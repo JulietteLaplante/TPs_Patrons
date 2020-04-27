@@ -2,7 +2,7 @@
 using System;
 
 
-namespace UserManager
+namespace UserSDK
 {
     class User
     {

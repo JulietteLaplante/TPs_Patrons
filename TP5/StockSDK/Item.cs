@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace StockManager
+namespace StockSDK
 {
     class Item
     {
