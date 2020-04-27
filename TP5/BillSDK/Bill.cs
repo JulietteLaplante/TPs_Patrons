@@ -1,6 +1,8 @@
 ﻿using System;
 using RPCSDK;
 using UserSDK;
+using StockSDK;
+using System.Collections.Generic;
 
 namespace BillSDK
 {
@@ -8,40 +10,62 @@ namespace BillSDK
     {
 
         public User user { get; set; }
-        public List prenom { get; set; }
-        public string email { get; set; }
-        public string username { get; set; }
 
-        public User()
+        public struct BillLine
+        {
+            public ItemLine item { get; set; }
+
+            //sans taxe
+            public int sousTotal { get; set; }
+        }
+
+    }
+
+        public List<BillLine> billLines { get; set; }
+
+        public int sousTotalSansTaxe { get; set; }
+        public int TotalAvecTaxe { get; set; }
+
+        public Bill()
         {
         }
 
-        public User(string[] user)
+        public static Bill CreateBill(User user, List<ItemLine> lines)
         {
-            this.name = user[0];
-            this.prenom = user[1];
-            this.email = user[2];
-            this.username = user[3];
-        }
+            Bill bill = new Bill();            
 
-        public static User GetUser(string username)
-        {
+            string[] res = new string[2];
+            bill.sousTotalSansTaxe += 0;
+            bill.TotalAvecTaxe += 0;
+
+
             var rpcClient = new RpcClient();
 
-            Console.WriteLine(" [x] Requesting user " + username);
-            var response = rpcClient.Call(username);
+            foreach (ItemLine item in lines) 
+            {
+                Console.WriteLine(" [x] Requesting lines " + lines.);
+                var response = rpcClient.Call(item.item.name + ":" 
+                                            + item.item.prixUnitaire + ":"
+                                            + item.quantity, "billqueue");
 
-            Console.WriteLine(" [.] Got '{0}'", response);
+                //expected response : sousTotal(sans taxes):Total(avec taxes)
+                Console.WriteLine(" [.] Got '{0}'", response);
+                res = response.Split(":");
+
+                //sous total sans taxe
+                bill.billLines.Add(item, int.Parse(res[0]));
+
+                bill.sousTotalSansTaxe += int.Parse(res[0]);
+                bill.TotalAvecTaxe += int.Parse(res[1]);
+
+            }           
+          
             rpcClient.Close();
 
-            //si l'username n'hexiste pas
-            if (response == "null")
-                return null;
+            bill.user = user;
 
-            return new User(response.Split(":"));
+            return bill;
 
         }
     }
-    public class BillLine
-    {
-    }
+}
