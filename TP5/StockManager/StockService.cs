@@ -6,7 +6,7 @@ using System.Text.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
-namespace StockManager
+namespace StockManagerService
 {
     class StockService
     {
@@ -59,6 +59,7 @@ namespace StockManager
 
                 consumer.Received += (sender, e) =>
                 {
+                    Console.WriteLine("Request received.");
                     var orderBytes = e.Body;
                     string response = null;
                     try
@@ -76,6 +77,7 @@ namespace StockManager
                     {
                         var responseBytes = Encoding.UTF8.GetBytes(response);
                         channel.BasicPublish(exchange: "", routingKey: e.BasicProperties.ReplyTo, basicProperties: channel.CreateBasicProperties(), body: responseBytes);
+                        Console.WriteLine("Sending response :" + response);
                     }
 
                 };

@@ -6,4 +6,13 @@
     <RootNamespace>E_Commerce</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="RPCSDK">
+      <HintPath>..\RPCSDK\bin\Debug\netcoreapp3.1\RPCSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="StockSDK">
+      <HintPath>..\StockSDK\bin\Debug\netcoreapp3.1\StockSDK.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

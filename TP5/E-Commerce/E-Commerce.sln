@@ -7,15 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Commerce", "E-Commerce.cs
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockManager", "..\StockManager\StockManager.csproj", "{D1E3327E-0297-4510-9005-04D68CDEF165}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManager", "..\UserManager\UserManager.csproj", "{87D3383B-A45F-4CA0-BBAA-77A19C24258C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserManager", "..\UserManager\UserManager.csproj", "{87D3383B-A45F-4CA0-BBAA-77A19C24258C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillManager", "..\BillManager\BillManager.csproj", "{08A3DAD4-1BDC-4F03-B31B-B8BABB1CD54F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BillManager", "..\BillManager\BillManager.csproj", "{08A3DAD4-1BDC-4F03-B31B-B8BABB1CD54F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserSDK", "..\UserSDK\UserSDK.csproj", "{F8908751-BA79-42E9-8882-0C43FC4C2000}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserSDK", "..\UserSDK\UserSDK.csproj", "{F8908751-BA79-42E9-8882-0C43FC4C2000}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPCSDK", "..\RPCSDK\RPCSDK.csproj", "{5869E03C-B1B9-49D5-ABC0-6CDEBFD7DCE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPCSDK", "..\RPCSDK\RPCSDK.csproj", "{5869E03C-B1B9-49D5-ABC0-6CDEBFD7DCE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockSDK", "..\StockSDK\StockSDK.csproj", "{68107FDB-E860-456F-B582-1DC59A15E225}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockSDK", "..\StockSDK\StockSDK.csproj", "{68107FDB-E860-456F-B582-1DC59A15E225}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
