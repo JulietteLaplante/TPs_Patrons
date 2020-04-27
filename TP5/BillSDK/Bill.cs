@@ -1,13 +1,14 @@
-﻿using RPCSDK;
-using System;
+﻿using System;
+using RPCSDK;
+using UserSDK;
 
-
-namespace UserManager
+namespace BillSDK
 {
-    class User
+    public class Bill
     {
-        public string name { get; set; }
-        public string prenom { get; set; }
+
+        public User user { get; set; }
+        public List prenom { get; set; }
         public string email { get; set; }
         public string username { get; set; }
 
@@ -15,7 +16,7 @@ namespace UserManager
         {
         }
 
-        public User(string[]user)
+        public User(string[] user)
         {
             this.name = user[0];
             this.prenom = user[1];
@@ -28,7 +29,7 @@ namespace UserManager
             var rpcClient = new RpcClient();
 
             Console.WriteLine(" [x] Requesting user " + username);
-            var response = rpcClient.Call(username, "user_queue");
+            var response = rpcClient.Call(username);
 
             Console.WriteLine(" [.] Got '{0}'", response);
             rpcClient.Close();
@@ -41,8 +42,6 @@ namespace UserManager
 
         }
     }
-
-
-    
-
-}
+    public class BillLine
+    {
+    }

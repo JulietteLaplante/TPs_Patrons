@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPCSDK", "..\RPCSDK\RPCSDK.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockSDK", "..\StockSDK\StockSDK.csproj", "{68107FDB-E860-456F-B582-1DC59A15E225}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillSDK", "..\BillSDK\BillSDK.csproj", "{09B54681-4110-435C-BE56-F5D5A3BADC86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{68107FDB-E860-456F-B582-1DC59A15E225}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68107FDB-E860-456F-B582-1DC59A15E225}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68107FDB-E860-456F-B582-1DC59A15E225}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09B54681-4110-435C-BE56-F5D5A3BADC86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09B54681-4110-435C-BE56-F5D5A3BADC86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09B54681-4110-435C-BE56-F5D5A3BADC86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09B54681-4110-435C-BE56-F5D5A3BADC86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
