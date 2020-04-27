@@ -17,14 +17,14 @@ namespace RPCSDK
 
         public RpcClient()
         {
-            //ouverture connection
+            //connection creation
             var factory = new ConnectionFactory() { HostName = "localhost" };
             connection = factory.CreateConnection();
             channel = connection.CreateModel();
             replyQueueName = channel.QueueDeclare().QueueName;
             consumer = new EventingBasicConsumer(channel);
 
-            //paramètres
+            //parameters
             props = channel.CreateBasicProperties();
             var correlationId = Guid.NewGuid().ToString();
             props.CorrelationId = correlationId;
