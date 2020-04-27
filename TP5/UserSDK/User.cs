@@ -4,7 +4,7 @@ using System;
 
 namespace UserSDK
 {
-    class User
+    public class User
     {
         public string name { get; set; }
         public string prenom { get; set; }

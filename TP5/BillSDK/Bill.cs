@@ -3,6 +3,7 @@ using RPCSDK;
 using UserSDK;
 using StockSDK;
 using System.Collections.Generic;
+using System.Text.Json;
 
 namespace BillSDK
 {
@@ -13,18 +14,22 @@ namespace BillSDK
 
         public struct BillLine
         {
+
+            public BillLine(ItemLine item, float total) : this()
+            {
+                this.item = item;
+                this.subTotal = total;
+            }
+
             public ItemLine item { get; set; }
 
-            //sans taxe
-            public int sousTotal { get; set; }
+            public float subTotal { get; set; }
         }
-
-    }
 
         public List<BillLine> billLines { get; set; }
 
-        public int sousTotalSansTaxe { get; set; }
-        public int TotalAvecTaxe { get; set; }
+        public float subTotalWithoutTaxes { get; set; }
+        public float TotalWithTaxes { get; set; }
 
         public Bill()
         {
@@ -32,35 +37,27 @@ namespace BillSDK
 
         public static Bill CreateBill(User user, List<ItemLine> lines)
         {
-            Bill bill = new Bill();            
-
+            Bill bill = new Bill();
             string[] res = new string[2];
-            bill.sousTotalSansTaxe += 0;
-            bill.TotalAvecTaxe += 0;
-
 
             var rpcClient = new RpcClient();
 
-            foreach (ItemLine item in lines) 
-            {
-                Console.WriteLine(" [x] Requesting lines " + lines.);
-                var response = rpcClient.Call(item.item.name + ":" 
-                                            + item.item.prixUnitaire + ":"
-                                            + item.quantity, "billqueue");
+            Console.WriteLine(" [x] Requesting Totals");
+            var response = rpcClient.Call(JsonSerializer.Serialize(lines), "billqueue");
 
-                //expected response : sousTotal(sans taxes):Total(avec taxes)
-                Console.WriteLine(" [.] Got '{0}'", response);
-                res = response.Split(":");
-
-                //sous total sans taxe
-                bill.billLines.Add(item, int.Parse(res[0]));
-
-                bill.sousTotalSansTaxe += int.Parse(res[0]);
-                bill.TotalAvecTaxe += int.Parse(res[1]);
-
-            }           
-          
+            //expected response : subTotal(without taxes):Total(with taxes)
+            Console.WriteLine(" [.] Got '{0}'", response);
             rpcClient.Close();
+
+            res = response.Split(":");
+
+            foreach (ItemLine item in lines)
+            {
+                bill.billLines.Add(new BillLine(item, item.item.price * item.quantity));
+            }
+
+            bill.subTotalWithoutTaxes = float.Parse(res[0]);
+            bill.TotalWithTaxes = float.Parse(res[1]);
 
             bill.user = user;
 
