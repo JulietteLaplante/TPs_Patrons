@@ -77,7 +77,8 @@ namespace StockManagerService
                     {
                         var responseBytes = Encoding.UTF8.GetBytes(response);
                         channel.BasicPublish(exchange: "", routingKey: e.BasicProperties.ReplyTo, basicProperties: channel.CreateBasicProperties(), body: responseBytes);
-                        Console.WriteLine("Sending response :" + response);
+                        Console.WriteLine("Replying to : " + e.BasicProperties.ReplyTo);
+                        Console.WriteLine("Response sent.");
                     }
 
                 };

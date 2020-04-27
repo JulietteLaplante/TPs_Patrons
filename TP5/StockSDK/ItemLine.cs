@@ -4,7 +4,7 @@ using System.Text;
 
 namespace StockSDK
 {
-    class ItemLine
+    public class ItemLine
     {
         public Item item { get; set; }
         public int quantity { get; set; }

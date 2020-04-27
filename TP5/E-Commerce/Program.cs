@@ -8,6 +8,10 @@ namespace E_Commerce
         static void Main(string[] args)
         {
 
+            StockManager sm = new StockManager();
+            sm.ReserveItem(2, "peer");
+
+            
             Console.WriteLine("Press the \"Enter\" key to exit.");
             Console.ReadLine();
 

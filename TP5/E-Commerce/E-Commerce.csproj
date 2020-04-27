@@ -7,9 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="RPCSDK">
-      <HintPath>..\RPCSDK\bin\Debug\netcoreapp3.1\RPCSDK.dll</HintPath>
-    </Reference>
+    <PackageReference Include="RabbitMQ.Client" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="StockSDK">
       <HintPath>..\StockSDK\bin\Debug\netcoreapp3.1\StockSDK.dll</HintPath>
     </Reference>

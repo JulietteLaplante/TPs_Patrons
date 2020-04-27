@@ -10,7 +10,7 @@ using RPCSDK;
 
 namespace StockSDK
 {
-    class StockManager
+    public class StockManager
     {
 
         public StockManager()

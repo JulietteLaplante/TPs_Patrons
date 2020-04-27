@@ -8,4 +8,10 @@
     <PackageReference Include="RabbitMQ.Client" Version="6.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="RPCSDK">
+      <HintPath>..\RPCSDK\bin\Debug\netcoreapp3.1\RPCSDK.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
