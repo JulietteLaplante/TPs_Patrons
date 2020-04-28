@@ -33,6 +33,7 @@ namespace BillSDK
 
         public Bill()
         {
+            billLines = new List<BillLine>();
         }
 
         public static Bill CreateBill(User user, List<ItemLine> lines)

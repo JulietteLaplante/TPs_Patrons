@@ -7,6 +7,7 @@ using UserSDK;
 using BillSDK;
 using System.Text.Json;
 using static BillSDK.Bill;
+using System.Collections.Generic;
 
 namespace BillManager
 {
@@ -75,16 +76,17 @@ namespace BillManager
             try
             {
                 float sum = 0f;
-                Bill bill = JsonSerializer.Deserialize<Bill>(request);
-                foreach (BillLine billLine in bill.billLines)
+                List<ItemLine> itemLines = JsonSerializer.Deserialize<List<ItemLine>>(request);
+                foreach (ItemLine itemLine in itemLines)
                 {
-                    sum += billLine.subTotal;
+                    sum += itemLine.quantity * itemLine.item.price;
                 }
                 float sumWithTaxes = sum * (1f + 0.05f + 0.0975f);
-                return sumWithTaxes.ToString();
+                return sum + ":" + sumWithTaxes.ToString();
 
 
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 return "";

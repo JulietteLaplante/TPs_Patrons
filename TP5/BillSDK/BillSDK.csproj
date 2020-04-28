@@ -5,7 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="RabbitMQ.Client" Version="6.0.0" />
+    <Reference Include="RPCSDK">
+      <HintPath>..\RPCSDK\bin\Debug\netcoreapp3.1\RPCSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="StockSDK">
+      <HintPath>..\StockSDK\bin\Debug\netcoreapp3.1\StockSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="UserSDK">
+      <HintPath>..\UserSDK\bin\Debug\netcoreapp3.1\UserSDK.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

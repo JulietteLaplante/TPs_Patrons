@@ -1,0 +1,25 @@
+[
+    {
+        "name": "apple",
+        "price": 0.5,
+        "quantity": 37
+    },
+    {
+
+        "name": "peer",
+        "price": 1.0,
+        "quantity": 26
+    },
+    {
+
+        "name": "watermelon",
+        "price": 5.99,
+        "quantity": 8
+    },
+    {
+
+        "name": "strawberry",
+        "price": 0.1,
+        "quantity": 241
+    }
+]

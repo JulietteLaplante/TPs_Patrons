@@ -24,7 +24,7 @@ namespace E_Commerce
         }
         void Start()
         {
-            // ecom.Authenticate();
+            Authenticate();
             PrintMenu();
             sm.PrintCatalog();
             Console.WriteLine("What do you want to do ?");
@@ -53,11 +53,15 @@ namespace E_Commerce
                 }
                 else if (command[0] == "p")
                 {
-
-                } else if (command[0] == "h")
+                    Bill b = Bill.CreateBill(user, cart);
+                    Console.WriteLine("Total WITHOUT taxes: " + b.subTotalWithoutTaxes);
+                    Console.WriteLine("Total WITH taxes: " + b.TotalWithTaxes);
+                } 
+                else if (command[0] == "h")
                 {
                     PrintMenu();
-                } else if (command[0] == "c")
+                } 
+                else if (command[0] == "c")
                 {
                     sm.PrintCatalog();
                 }
@@ -82,7 +86,7 @@ namespace E_Commerce
         {
             Console.WriteLine(" Enter the corresponding command to use this app: ");
             Console.WriteLine(" [b quantity itemName] Buy things");
-            Console.WriteLine(" [p] Get the bill to Pay");
+            Console.WriteLine(" [p] Get the bill");
             Console.WriteLine(" [h] Print this Help menu");
             Console.WriteLine(" [c] Print the catalalog again");
             Console.WriteLine(" [e] Exit");

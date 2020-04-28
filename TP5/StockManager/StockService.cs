@@ -115,7 +115,7 @@ namespace StockManagerService
                 // else we refuse the request
                 else
                 {
-                    stock[itemRequested].quantity += quantityRequested
+                    stock[itemRequested].quantity += quantityRequested;
                     throw new Exception("Not enought items available.");
                 }
             } else if (requestType == "put")
