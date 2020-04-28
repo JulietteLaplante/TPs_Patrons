@@ -24,7 +24,7 @@ namespace StockSDK
         {
             var rpcClient = new RpcClient();
 
-            Console.WriteLine(" Trying to reserve" + quantity + " " + name + "(s) ...");
+            Console.WriteLine("Trying to reserve " + quantity + " " + name + "(s) ...");
             string request = "get:" + name + ":" + quantity;
             var response = rpcClient.Call(request, "stock_queue");
 
@@ -43,7 +43,7 @@ namespace StockSDK
         {
             var rpcClient = new RpcClient();
 
-            Console.WriteLine(" Releasing " + itemline.quantity + " " + itemline.item.name + "(s) ...");
+            Console.WriteLine("Releasing " + itemline.quantity + " " + itemline.item.name + "(s) ...");
             string request = "put:" + itemline.item.name + ":" + itemline.quantity;
             var response = rpcClient.Call(request, "stock_queue");
 
@@ -51,7 +51,7 @@ namespace StockSDK
 
             //if the request wasn't processed correctly
             if (response == "")
-                Console.WriteLine(" Something went wrong...\n", response);
+                Console.WriteLine("Something went wrong...\n", response);
 
             Console.WriteLine(" Done.\n", response);
         }
@@ -67,7 +67,7 @@ namespace StockSDK
 
             //if the request wasn't processed correctly
             if (response == "")
-                Console.WriteLine(" Something went wrong whilke getting the catalog...\n", response);
+                Console.WriteLine("Something went wrong whilke getting the catalog...\n", response);
 
             try
             {
