@@ -42,11 +42,10 @@ namespace BillSDK
 
             var rpcClient = new RpcClient();
 
-            Console.WriteLine(" [x] Requesting Totals");
-            var response = rpcClient.Call(JsonSerializer.Serialize(lines), "billqueue");
+            Console.WriteLine(" Requesting Totals");
+            var response = rpcClient.Call(JsonSerializer.Serialize(lines), "bill_queue");
 
             //expected response : subTotal(without taxes):Total(with taxes)
-            Console.WriteLine(" [.] Got '{0}'", response);
             rpcClient.Close();
 
             res = response.Split(":");

@@ -5,12 +5,13 @@ using System.Text;
 using System.Text.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using StockSDK;
 
 namespace StockManagerService
 {
     class StockService
     {
-        Dictionary<string, StockItem> stock;
+        Dictionary<string, ItemLine> stock;
 
 
         static void Main(string[] args)
@@ -22,7 +23,7 @@ namespace StockManagerService
 
         StockService()
         {
-            stock = new Dictionary<string, StockItem>();
+            stock = new Dictionary<string, ItemLine>();
             InitStock();
         }
 
@@ -34,11 +35,11 @@ namespace StockManagerService
             foreach (string file in files)
             {
                 Console.WriteLine("Fetch stock from the file " + file + ".");
-                StockItem[] items = JsonSerializer.Deserialize<StockItem[]>(File.ReadAllText(file));
-                foreach (StockItem item in items )
+                ItemLine[] itemLines = JsonSerializer.Deserialize<ItemLine[]>(File.ReadAllText(file));
+                foreach (ItemLine itemLine in itemLines)
                 {
-                    stock.Add(item.name, item);
-                    Console.WriteLine(item.quantity + " " + item.name + "(s) added to stock.");
+                    stock.Add(itemLine.item.name, itemLine);
+                    Console.WriteLine(itemLine.quantity + " " + itemLine.item.name + "(s) added to stock.");
                 }
 
             }
@@ -52,8 +53,8 @@ namespace StockManagerService
             {
                 channel.QueueDeclare(queue: "stock_queue", durable: false, exclusive: false, autoDelete: false, arguments: null);
                 var consumer = new EventingBasicConsumer(channel);
-
-                channel.BasicConsume(queue: "stock_queue", autoAck: true, consumer: consumer);
+                channel.BasicQos(0, 1, false);
+                channel.BasicConsume(queue: "stock_queue", autoAck: false, consumer: consumer);
 
                 Console.WriteLine("\nAwaiting RPC requests");
 
@@ -62,6 +63,9 @@ namespace StockManagerService
                     Console.WriteLine("Request received.");
                     var orderBytes = e.Body;
                     string response = null;
+                    var props = e.BasicProperties;
+                    var replyProps = channel.CreateBasicProperties();
+                    replyProps.CorrelationId = props.CorrelationId;
                     try
                     {
                         string request = Encoding.UTF8.GetString(orderBytes.ToArray());
@@ -76,14 +80,15 @@ namespace StockManagerService
                     finally
                     {
                         var responseBytes = Encoding.UTF8.GetBytes(response);
-                        channel.BasicPublish(exchange: "", routingKey: e.BasicProperties.ReplyTo, basicProperties: channel.CreateBasicProperties(), body: responseBytes);
-                        Console.WriteLine("Replying to : " + e.BasicProperties.ReplyTo);
-                        Console.WriteLine("Response sent.");
+                        channel.BasicPublish(exchange: "", routingKey: props.ReplyTo, basicProperties: replyProps, body: responseBytes);
+                        channel.BasicAck(deliveryTag: e.DeliveryTag, multiple: false);
+                        Console.WriteLine("Response sent : " + response);
+
                     }
 
                 };
 
-                Console.WriteLine("Press [enter] to exit.");
+                Console.WriteLine("Press [enter] to exit...");
                 Console.ReadLine();
             }
         }
@@ -92,7 +97,7 @@ namespace StockManagerService
         // "get:apple:12"  will try to remove 12 apple from the stock (to be put in the user's cart for example) 
         // and return the individual price of the item
         // "put:apple:5" will add 5 apples to the stock and return the individual price
-        // "info:peer" will return "price:quantityAvailable"
+        // "info" will return the stock (if one want to know all available products their price and the remaning quantity for example)
         string ProcessRequest (string request)
         {
             string[] orderParts = request.Split(':');
@@ -105,7 +110,7 @@ namespace StockManagerService
                 // if there is enought we proceed
                 if ((stock[itemRequested].quantity -= quantityRequested) >= 0)
                 {
-                    return stock[itemRequested].price.ToString();
+                    return stock[itemRequested].item.price.ToString();
                 }
                 // else we refuse the request
                 else
@@ -119,7 +124,7 @@ namespace StockManagerService
                 return stock[itemRequested].quantity.ToString();
             } else if (requestType == "info")
             {
-                return stock[itemRequested].price +":"+ stock[itemRequested].quantity;
+                return JsonSerializer.Serialize(stock);
             }
             else
             {

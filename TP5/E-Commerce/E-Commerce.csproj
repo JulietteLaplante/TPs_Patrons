@@ -11,6 +11,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\UserSDK\UserSDK.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BillSDK">
+      <HintPath>..\BillSDK\bin\Debug\netcoreapp3.1\BillSDK.dll</HintPath>
+    </Reference>
     <Reference Include="StockSDK">
       <HintPath>..\StockSDK\bin\Debug\netcoreapp3.1\StockSDK.dll</HintPath>
     </Reference>

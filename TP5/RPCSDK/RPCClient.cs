@@ -29,7 +29,6 @@ namespace RPCSDK
             var correlationId = Guid.NewGuid().ToString();
             props.CorrelationId = correlationId;
             props.ReplyTo = replyQueueName;
-            Console.WriteLine("Reply queue name:" + replyQueueName);
 
             consumer.Received += (model, ea) =>
             {

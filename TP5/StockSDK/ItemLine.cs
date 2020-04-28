@@ -15,6 +15,11 @@ namespace StockSDK
             item.price = price;
             this.quantity = quantity;
         }
+
+        ItemLine()
+        {
+
+        }
     }
 
 }

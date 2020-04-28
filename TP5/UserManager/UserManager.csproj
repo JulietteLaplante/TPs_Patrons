@@ -9,4 +9,10 @@
     <PackageReference Include="RabbitMQ.Client" Version="6.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="UserSDK">
+      <HintPath>..\UserSDK\bin\Debug\netcoreapp3.1\UserSDK.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

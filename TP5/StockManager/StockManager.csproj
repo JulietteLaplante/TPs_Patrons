@@ -9,4 +9,10 @@
     <PackageReference Include="RabbitMQ.Client" Version="6.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="StockSDK">
+      <HintPath>..\StockSDK\bin\Debug\netcoreapp3.1\StockSDK.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
