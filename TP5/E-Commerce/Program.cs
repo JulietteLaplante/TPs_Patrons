@@ -46,9 +46,10 @@ namespace E_Commerce
         void PrintMenu()
         {
             Console.WriteLine("Press the corresponding key to navigate in the menu: ");
-            Console.WriteLine("[b] Buy things");
+            Console.WriteLine("[b itemName quantity] Buy things");
             Console.WriteLine("[p] Get the bill to Pay");
             Console.WriteLine("[e] Exit");
+            Console.WriteLine("\n");
 
         }
     }

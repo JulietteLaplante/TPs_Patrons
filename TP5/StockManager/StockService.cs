@@ -82,7 +82,7 @@ namespace StockManagerService
                         var responseBytes = Encoding.UTF8.GetBytes(response);
                         channel.BasicPublish(exchange: "", routingKey: props.ReplyTo, basicProperties: replyProps, body: responseBytes);
                         channel.BasicAck(deliveryTag: e.DeliveryTag, multiple: false);
-                        Console.WriteLine("Response sent : " + response);
+                        Console.WriteLine("Response sent.");
 
                     }
 

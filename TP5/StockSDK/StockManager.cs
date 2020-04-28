@@ -71,11 +71,11 @@ namespace StockSDK
 
             try
             {
-                Console.WriteLine("Name \t Quantity \t Price");
-                ItemLine[] stock = JsonSerializer.Deserialize<ItemLine[]>(response);
-                foreach (ItemLine itemLine in stock)
+                Console.WriteLine("Name \t\tQuantity \tPrice");
+                Dictionary<string, ItemLine> stock = JsonSerializer.Deserialize<Dictionary<string,ItemLine>>(response);
+                foreach (KeyValuePair<string,  ItemLine> itemLine in stock)
                 {
-                    Console.WriteLine(itemLine.item.name + "\t" + itemLine.quantity + "\t" + itemLine.item.price);
+                    Console.WriteLine(itemLine.Value.item.name + "\t\t" + itemLine.Value.quantity + "\t\t" + itemLine.Value.item.price);
                 }
                 Console.WriteLine("\n");
             }
